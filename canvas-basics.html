@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+	<canvas width="800" height="600" id="myCanvas">
+    	Sorry, your browser does not support the canvas tag.
+    </canvas>
+
+	<script>
+		var myCanvas = document.getElementById("myCanvas");
+		//make an object for its "context" and choose a context
+		var ctx = myCanvas.getContext("2d");
+		//make rectangle
+		//fillRect(starting x,starting y,width,height);
+		ctx.fillRect(20,10,100,50);
+		//you can make a rectangular stroke
+		ctx.strokeStyle = '#006699';
+		ctx.lineWidth = 10;
+		ctx.strokeRect(50,25,100,50);
+		
+		//start a line
+		ctx.beginPath();
+		//moveTo is like lifting your pen and moving it without making a line
+		ctx.moveTo(240,80);
+		//lineTo also moves the pen, but makes a line to the new coordinate
+		ctx.lineTo(300,20);
+		ctx.lineTo(100,120);
+		//draw an arc(center-x, center-y, radius, startAngle, endAngle, counterClockWise)
+		ctx.arc(300,300,100,100, Math.PI*.5,false);
+		//to get the stroke to appear:
+		ctx.stroke();
+		
+	</script>
+</body>
+</html>
